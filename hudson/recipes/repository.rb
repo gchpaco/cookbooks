@@ -29,6 +29,13 @@ include_recipe "apt"
 template "/etc/apt/sources.list.d/hudson.list" do
   mode 0644
   variables :code_name => node[:lsb][:codename]
-  notifies :run, resources(:execute => "apt-get-update"), :immediately
+  notifies :run, resources(:execute => "fetch-key"), :immediately
   source "hudson.list.erb"
+end
+
+package "curl"
+
+execute "fetch-key" do
+  command "curl -s http://pkg.hudson-labs.org/debian/hudson-labs.org.key | apt-key add -"
+  notifies :run, resources(:execute => "apt-get-update"), :immediately
 end
