@@ -24,13 +24,10 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-include_recipe "apt"
-
 package "curl"
 
 execute "fetch-key" do
   command "curl -s http://pkg.hudson-labs.org/debian/hudson-labs.org.key | apt-key add -"
-  notifies :run, resources(:execute => "apt-get-update"), :immediately
 end
 
 template "/etc/apt/sources.list.d/hudson.list" do
@@ -38,3 +35,5 @@ template "/etc/apt/sources.list.d/hudson.list" do
   variables :code_name => node[:lsb][:codename]
   source "hudson.list.erb"
 end
+
+include_recipe "apt"
