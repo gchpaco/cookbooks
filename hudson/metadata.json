@@ -1,0 +1,39 @@
+{
+    "replacing": {
+    },
+    "groupings": {
+    },
+    "long_description": "",
+    "description": "Install and run Hudson on Ubuntu/Debian",
+    "recommendations": {
+    },
+    "maintainer": "Graham Hughes",
+    "attributes": {
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+      "apt": [
+
+      ]
+    },
+    "maintainer_email": "graham@rightscale.com",
+    "conflicting": {
+    },
+    "platforms": {
+      "debian": [
+
+      ],
+      "ubuntu": [
+
+      ]
+    },
+    "name": "hudson",
+    "version": "0.1.0",
+    "providing": {
+    },
+    "license": "MIT",
+    "recipes": {
+      "hudson::repository": "Sets up Hudson repository"
+    }
+  }

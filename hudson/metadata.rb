@@ -1,0 +1,10 @@
+maintainer "Graham Hughes"
+maintainer_email "graham@rightscale.com"
+license "MIT"
+description "Install and run Hudson on Ubuntu/Debian"
+version "0.1"
+depends "apt"
+supports "ubuntu"
+supports "debian"
+
+recipe "hudson::repository", "Sets up Hudson repository"
