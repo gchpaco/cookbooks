@@ -34,6 +34,8 @@
     },
     "license": "MIT",
     "recipes": {
+      "hudson::update": "Updates Hudson instance",
+      "hudson": "Starts local Hudson master",
       "hudson::repository": "Sets up Hudson repository"
     }
   }

@@ -8,3 +8,5 @@ supports "ubuntu"
 supports "debian"
 
 recipe "hudson::repository", "Sets up Hudson repository"
+recipe "hudson::update", "Updates Hudson instance"
+recipe "hudson", "Starts local Hudson master"
