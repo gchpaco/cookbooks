@@ -29,5 +29,8 @@ include_recipe "apt"
 package "hudson" do
   action :upgrade
   response_file "hudson.seed"
-  notifies :restart, "service[hudson]"
+end
+
+service "hudson" do
+  action :restart
 end
