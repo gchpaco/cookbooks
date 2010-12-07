@@ -27,4 +27,6 @@
 include_recipe "hudson::repository"
 include_recipe "hudson::update"
 
-service "hudson"
+service "hudson" do
+  action :start
+end
