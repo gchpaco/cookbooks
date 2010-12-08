@@ -1,0 +1,30 @@
+{
+    "replacing": {
+    },
+    "groupings": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES: \n\n= USAGE:\n\n",
+    "description": "Patches to rightscale stuff",
+    "recommendations": {
+    },
+    "maintainer": "RightScale, Inc.",
+    "attributes": {
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "maintainer_email": "graham@rightscale.com",
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "name": "rightscale",
+    "version": "0.1.0",
+    "providing": {
+    },
+    "license": "Apache 2.0",
+    "recipes": {
+      "rightscale::right_popen": "Upgrades right_popen to version 1.0.11"
+    }
+  }
