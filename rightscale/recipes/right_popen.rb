@@ -17,9 +17,11 @@
 # limitations under the License.
 #
 
-cookbook_file "/tmp/right_popen-1.0.11.gem" do
+remote_file "/tmp/right_popen-1.0.11.gem" do
   source "right_popen-1.0.11"
   mode "0644"
+  owner "root"
+  group "root"
 end
 
 gem_package "/tmp/right_popen-1.0.11.gem" do
