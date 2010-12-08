@@ -9,4 +9,5 @@ supports "debian"
 
 recipe "hudson::repository", "Sets up Hudson repository"
 recipe "hudson::update", "Updates Hudson instance"
+recipe "hudson::shutdown", "Shuts the Hudson instance down"
 recipe "hudson", "Starts local Hudson master"

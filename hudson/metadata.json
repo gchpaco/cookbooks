@@ -36,6 +36,7 @@
     "recipes": {
       "hudson::update": "Updates Hudson instance",
       "hudson": "Starts local Hudson master",
+      "hudson::shutdown": "Shuts the Hudson instance down",
       "hudson::repository": "Sets up Hudson repository"
     }
   }
