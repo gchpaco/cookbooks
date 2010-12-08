@@ -1,0 +1,43 @@
+{
+    "replacing": {
+    },
+    "groupings": {
+    },
+    "long_description": "",
+    "description": "A fabulous new cookbook",
+    "recommendations": {
+    },
+    "maintainer": "Your Name",
+    "attributes": {
+      "nginx/proxy_port": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "8080",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "display_name": "Nginx Proxy Port",
+        "description": "Port to connect to for local application server"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "maintainer_email": "youremail@example.com",
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "name": "nginx",
+    "version": "0.0.0",
+    "providing": {
+    },
+    "license": "Apache v2.0",
+    "recipes": {
+    }
+  }
