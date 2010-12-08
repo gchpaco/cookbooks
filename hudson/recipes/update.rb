@@ -25,6 +25,7 @@
 #++
 
 include_recipe "apt"
+include_recipe "hudson::service"
 
 package "hudson" do
   action :upgrade

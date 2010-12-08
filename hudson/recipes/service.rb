@@ -1,6 +1,6 @@
 #--  -*- mode: ruby; encoding: utf-8 -*-
 # Cookbook Name:: hudson
-# Recipe:: default
+# Recipe:: service
 #
 # Copyright: Copyright (c) 2010 RightScale, Inc.
 #
@@ -24,10 +24,14 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-include_recipe "hudson::repository"
-include_recipe "hudson::update"
-include_recipe "hudson::service"
-
 service "hudson" do
-  action :start
+  case node[:platform]
+  when "debian", "ubuntu"
+    service_name "hudson"
+    start_command "/usr/sbin/invoke-rc.d hudson start <&- >&- 2>&-"
+    stop_command "/usr/sbin/invoke-rc.d hudson stop <&- >&- 2>&-"
+    restart_command "/usr/sbin/invoke-rc.d hudson restart <&- >&- 2>&-"
+    supports [:start, :stop, :restart]
+  end
+  action :enable
 end
