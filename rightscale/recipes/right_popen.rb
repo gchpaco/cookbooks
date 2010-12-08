@@ -18,7 +18,7 @@
 #
 
 remote_file "/tmp/right_popen-1.0.11.gem" do
-  source "right_popen-1.0.11"
+  source "right_popen-1.0.11.gem"
   mode "0644"
   owner "root"
   group "root"
