@@ -1,6 +1,6 @@
 #--  -*- mode: ruby; encoding: utf-8 -*-
-# Cookbook Name:: hudson
-# Recipe:: repository
+# Cookbook Name:: jenkins
+# Recipe:: default
 #
 # Copyright: Copyright (c) 2010 RightScale, Inc.
 #
@@ -24,14 +24,9 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-package "curl"
+include_recipe "jenkins::repository"
+include_recipe "jenkins::update"
 
-execute "fetch-key" do
-  command "curl -s http://pkg.hudson-labs.org/debian/hudson-labs.org.key | apt-key add -"
-end
-
-template "/etc/apt/sources.list.d/hudson-labs.list" do
-  mode 0644
-  variables :code_name => node[:lsb][:codename]
-  source "hudson.list.erb"
+service "jenkins" do
+  action :start
 end

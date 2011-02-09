@@ -1,6 +1,6 @@
 #--  -*- mode: ruby; encoding: utf-8 -*-
-# Cookbook Name:: hudson
-# Recipe:: default
+# Cookbook Name:: jenkins
+# Recipe:: update
 #
 # Copyright: Copyright (c) 2010 RightScale, Inc.
 #
@@ -24,9 +24,13 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-include_recipe "hudson::repository"
-include_recipe "hudson::update"
+include_recipe "apt"
 
-service "hudson" do
-  action :start
+package "jenkins" do
+  action :upgrade
+  response_file "jenkins.seed"
+end
+
+service "jenkins" do
+  action :restart
 end

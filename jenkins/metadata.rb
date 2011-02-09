@@ -1,0 +1,13 @@
+maintainer "Graham Hughes"
+maintainer_email "graham@rightscale.com"
+license "MIT"
+description "Install and run Jenkins on Ubuntu/Debian"
+version "0.1"
+depends "apt"
+supports "ubuntu"
+supports "debian"
+
+recipe "jenkins::repository", "Sets up Jenkins repository"
+recipe "jenkins::update", "Updates Jenkins instance"
+recipe "jenkins::shutdown", "Shuts the Jenkins instance down"
+recipe "jenkins", "Starts local Jenkins master"

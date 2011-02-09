@@ -1,5 +1,5 @@
 #--  -*- mode: ruby; encoding: utf-8 -*-
-# Cookbook Name:: hudson
+# Cookbook Name:: jenkins
 # Recipe:: shutdown
 #
 # Copyright: Copyright (c) 2010 RightScale, Inc.
@@ -24,6 +24,6 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-service "hudson" do
+service "jenkins" do
   action :stop
 end
