@@ -1,24 +1,9 @@
 {
-    "replacing": {
-    },
-    "groupings": {
-    },
-    "long_description": "",
-    "description": "Install and run Hudson on Ubuntu/Debian",
+    "version": "0.1.0",
     "recommendations": {
     },
     "maintainer": "Graham Hughes",
-    "attributes": {
-    },
     "suggestions": {
-    },
-    "dependencies": {
-      "apt": [
-
-      ]
-    },
-    "maintainer_email": "graham@rightscale.com",
-    "conflicting": {
     },
     "platforms": {
       "debian": [
@@ -28,15 +13,30 @@
 
       ]
     },
-    "name": "hudson",
-    "version": "0.1.0",
+    "license": "MIT",
+    "maintainer_email": "graham@rightscale.com",
+    "conflicting": {
+    },
+    "attributes": {
+    },
     "providing": {
     },
-    "license": "MIT",
+    "description": "Install and run Jenkins on Ubuntu/Debian",
+    "dependencies": {
+      "apt": [
+
+      ]
+    },
     "recipes": {
-      "hudson::update": "Updates Hudson instance",
-      "hudson": "Starts local Hudson master",
-      "hudson::shutdown": "Shuts the Hudson instance down",
-      "hudson::repository": "Sets up Hudson repository"
-    }
+      "jenkins": "Starts local Jenkins master",
+      "jenkins::update": "Updates Jenkins instance",
+      "jenkins::repository": "Sets up Jenkins repository",
+      "jenkins::shutdown": "Shuts the Jenkins instance down"
+    },
+    "replacing": {
+    },
+    "name": "jenkins",
+    "groupings": {
+    },
+    "long_description": ""
   }
