@@ -1,0 +1,26 @@
+= DESCRIPTION:
+
+Installs Jenkins.
+
+= REQUIREMENTS:
+
+== Platform:
+
+Tested on Ubuntu 10.04, should work on other platforms.
+
+== Cookbooks:
+
+Opscode cookbooks, http://github.com/opscode/cookbooks/tree/master:
+
+* nginx
+
+= ATTRIBUTES: 
+
+* jenkins[:port] - local port for Jenkins server to listen on.  Default 8080.
+
+= USAGE:
+
+We provide an nginx configuration that will proxy for the Jenkins
+server; it's generally a bad idea to expose it directly to the
+Internet.
+

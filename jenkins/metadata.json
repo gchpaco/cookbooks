@@ -1,5 +1,5 @@
 {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "recommendations": {
     },
     "maintainer": "Graham Hughes",
@@ -18,11 +18,28 @@
     "conflicting": {
     },
     "attributes": {
+      "jenkins/port": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "8080",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "Port for Jenkins server to listen on",
+        "display_name": "Jenkins local port"
+      }
     },
     "providing": {
     },
     "description": "Install and run Jenkins on Ubuntu/Debian",
     "dependencies": {
+      "nginx": [
+
+      ],
       "apt": [
 
       ]
@@ -31,7 +48,8 @@
       "jenkins": "Starts local Jenkins master",
       "jenkins::update": "Updates Jenkins instance",
       "jenkins::repository": "Sets up Jenkins repository",
-      "jenkins::shutdown": "Shuts the Jenkins instance down"
+      "jenkins::shutdown": "Shuts the Jenkins instance down",
+      "jenkins::nginx": "Starts nginx proxy for local Jenkins server"
     },
     "replacing": {
     },

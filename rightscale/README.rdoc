@@ -1,8 +1,12 @@
 = DESCRIPTION:
 
+Various RightScale specific patches and cookbooks.
+
 = REQUIREMENTS:
 
-= ATTRIBUTES: 
+Should be run only on RightLink enabled servers.
 
 = USAGE:
 
+Currently provides rightscale::right_popen, which patches a bug in
+right_popen that prevented long running servers from being spawned.
