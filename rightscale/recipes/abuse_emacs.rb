@@ -1,5 +1,9 @@
 # Cookbook Name:: rightscale
 # Recipe:: abuse_emacs
-package "emacs" { action :remove }
-package "emacs" { action :purge }
+package "emacs" do
+  action :remove
+end
+package "emacs" do
+  action :purge
+end
 package "emacs"
