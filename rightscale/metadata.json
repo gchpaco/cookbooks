@@ -20,7 +20,8 @@
     },
     "recipes": {
       "rightscale::right_popen": "Upgrades right_popen to version 1.0.11",
-      "rightscale::abuse_emacs": "Uninstall and install emacs"
+      "rightscale::abuse_emacs": "Uninstall and install emacs",
+      "rightscale::abuse_centos": "Uninstall and install xml stuff"
     },
     "replacing": {
     },
