@@ -7,4 +7,5 @@ version          "0.2"
 
 recipe "rightscale::right_popen", "Upgrades right_popen to version 1.0.11"
 recipe "rightscale::abuse_emacs", "Uninstall and install emacs"
+recipe "rightscale::abuse_xmldevel", "Uninstall and install libxml2-devel"
 recipe "rightscale::abuse_centos", "Uninstall and install xml stuff"
