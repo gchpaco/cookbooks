@@ -7,5 +7,6 @@ bash "setup for fail" do
   EOH
 end
 
-["libxml2-devel", "libxslt-devel"].each { |p| package p } 
+package "libxslt-devel"
+package "libxml2-devel"
 
