@@ -1,0 +1,119 @@
+{
+    "suggestions": {
+    },
+    "maintainer_email": "graham@rightscale.com",
+    "conflicting": {
+    },
+    "providing": {
+    },
+    "dependencies": {
+      "apt": [
+
+      ]
+    },
+    "license": "MIT",
+    "platforms": {
+    },
+    "version": "0.1.0",
+    "attributes": {
+      "rvm/rubies": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "1.6.0",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "Which ruby versions to install",
+        "display_name": "Rubies to install"
+      },
+      "rvm/releases": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "https://rvm.beginrescueend.com/releases/",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "URL to download RVM releases from",
+        "display_name": "RVM releases URL"
+      },
+      "rvm/group": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "root",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "Group to run RVM as",
+        "display_name": "RVM group"
+      },
+      "rvm/version": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "1.6.0",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "RVM version to use",
+        "display_name": "RVM version"
+      },
+      "rvm/user": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "root",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "User to run RVM as",
+        "display_name": "RVM user"
+      },
+      "rvm/homedir": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/var/lib/rvm",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "Directory to install RVM to",
+        "display_name": "RVM home directory"
+      }
+    },
+    "replacing": {
+    },
+    "recipes": {
+      "rvm::install_rubies": "Install various Ruby implementations",
+      "rvm::install": "Install RVM",
+      "rvm": "Install RVM"
+    },
+    "groupings": {
+    },
+    "long_description": "",
+    "description": "Install RVM",
+    "name": "rvm",
+    "recommendations": {
+    },
+    "maintainer": "Graham Hughes"
+  }
