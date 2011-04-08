@@ -38,12 +38,12 @@ directory "#{rvmdir}" do
 end
 
 remote_file "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz" do
-  source "#{node[:rvm][:releases]}/rvm-#{node[:rvm][:version]}.tar.gz"
+  source "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz"
   mode "0644"
 end
 
 remote_file "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5" do
-  source "#{node[:rvm][:releases]/rvm-#{node[:rvm][:version]}.tar.gz.md5"
+  source "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5"
   mode "0644"
 end
 
