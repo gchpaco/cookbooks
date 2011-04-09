@@ -83,7 +83,7 @@ file "#{rvmsrcdir}/rvm-#{node[:rvm][:version]}/scripts/install" do
 end
 
 execute "rvm installer" do
-  command "./scripts/install --prefix #{Shellwords.escape(File.dirname(rvmdir))} --path #{Shellwords.escape(rvmdir)}"
+  command "./scripts/install --prefix #{Shellwords.escape(rvmdir)}/ --path #{Shellwords.escape(rvmdir)}"
   user node[:rvm][:user]
   group node[:rvm][:user]
   cwd "#{rvmsrcdir}/rvm-#{node[:rvm][:version]}"
