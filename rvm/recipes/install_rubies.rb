@@ -24,6 +24,8 @@
 #++
 
 require 'shellwords'
+include_recipe "rvm::install"
+
 node[:rvm][:rubies].each do |ruby|
   execute "install #{ruby}" do
     command "#{Shellwords.escape(node[:rvm][:homedir])}/bin/rvm install #{Shellwords.escape(ruby)}"
