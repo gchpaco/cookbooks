@@ -37,7 +37,7 @@ rvmsrcdir = File.join(rvmdir, "src")
     mode "0755"
     action :create
   end
-end
+}
 
 remote_file "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz" do
   source "#{node[:rvm][:releases]}/rvm-#{node[:rvm][:version]}.tar.gz"
