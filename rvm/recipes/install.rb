@@ -58,10 +58,11 @@ ruby_block "check_md5_checksum" do
       digest << f.read(4096)
     end
     claimed_md5 = File.open("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5").read.chomp
+    
     if digest.hexdigest != claimed_md5
       FileUtils.rm("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz")
       FileUtils.rm("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5")
-      raise "MD5 checksum for #{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz differs from claimed"
+      raise "MD5 checksum for #{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz differs from claimed.  Was #{digest.hexdigest.inspect}, expected #{claimed_md5.inspect}"
     end
   end
   action :create
