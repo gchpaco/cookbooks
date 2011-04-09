@@ -88,4 +88,5 @@ execute "rvm installer" do
   group node[:rvm][:user]
   cwd "#{rvmsrcdir}/rvm-#{node[:rvm][:version]}"
   action :run
+  creates "#{rvmdir}/bin/rvm"
 end
