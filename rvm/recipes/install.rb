@@ -55,7 +55,9 @@ ruby_block "check_md5_checksum" do
   block do
     digest = Digest::MD5.new
     File.open("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz") do |f|
-      digest << f.read(4096)
+      until f.eof?
+        digest << f.read(4096)
+      end
     end
     claimed_md5 = File.open("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5").read.chomp
     
