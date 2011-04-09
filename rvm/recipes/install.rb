@@ -40,11 +40,13 @@ end
 remote_file "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz" do
   source "#{node[:rvm][:releases}/rvm-#{node[:rvm][:version]}.tar.gz"
   mode "0644"
+  action :create_if_missing
 end
 
 remote_file "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5" do
   source "#{node[:rvm][:releases}/rvm-#{node[:rvm][:version]}.tar.gz.md5"
   mode "0644"
+  action :create_if_missing
 end
 
 ruby_block "check_md5_checksum" do
@@ -54,7 +56,11 @@ ruby_block "check_md5_checksum" do
       digest << f.read(4096)
     end
     claimed_md5 = File.open("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5").read.chomp
-    raise "MD5 checksum for #{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz differs from claimed" if digest.hexdigest != claimed_md5
+    if digest.hexdigest != claimed_md5
+      FileUtils.rm("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz")
+      FileUtils.rm("#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz.md5")
+      raise "MD5 checksum for #{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz differs from claimed"
+    end
   end
   action :create
 end
