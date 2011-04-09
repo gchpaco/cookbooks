@@ -28,7 +28,7 @@
         ],
         "type": "array",
         "recipes": [
-
+          "rvm::install_rubies"
         ],
         "description": "Which ruby versions to install",
         "display_name": "Rubies to install"
@@ -106,6 +106,7 @@
     "replacing": {
     },
     "recipes": {
+      "rvm::clean": "Remove RVM",
       "rvm::install_rubies": "Install various Ruby implementations",
       "rvm::install": "Install RVM",
       "rvm": "Install RVM"
