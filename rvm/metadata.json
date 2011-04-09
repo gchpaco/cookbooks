@@ -22,8 +22,11 @@
         "choice": [
 
         ],
-        "default": "1.6.0",
-        "type": "string",
+        "default": [
+          "1.8.7",
+          "1.9.2"
+        ],
+        "type": "array",
         "recipes": [
 
         ],
@@ -60,11 +63,10 @@
       },
       "rvm/version": {
         "required": "optional",
-        "calculated": false,
+        "calculated": true,
         "choice": [
 
         ],
-        "default": "1.6.0",
         "type": "string",
         "recipes": [
 
