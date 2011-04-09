@@ -6,6 +6,7 @@ version "0.1"
 depends "apt"
 
 recipe "rvm", "Install RVM"
+recipe "rvm::clean", "Remove RVM"
 recipe "rvm::install", "Install RVM"
 recipe "rvm::install_rubies", "Install various Ruby implementations"
 
@@ -27,4 +28,5 @@ attribute "rvm/version", :display_name => "RVM version",
 attribute "rvm/rubies", :display_name => "Rubies to install",
   :description => "Which ruby versions to install",
   :type => "array",
+  :recipes => [ "rvm::install_rubies" ],
   :default => ["1.8.7", "1.9.2"]
