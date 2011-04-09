@@ -30,11 +30,13 @@ rvmdir = node[:rvm][:homedir]
 rvmarchivesdir = File.join(rvmdir, "archives")
 rvmsrcdir = File.join(rvmdir, "src")
 
-directory "#{rvmdir}" do
-  owner "#{node[:rvm][:user]}"
-  group "#{node[:rvm][:group]}"
-  mode "0755"
-  action :create
+[rvmdir, rvmarchivesdir, rvmsrcdir].each {|dir|
+  directory dir do
+    owner "#{node[:rvm][:user]}"
+    group "#{node[:rvm][:group]}"
+    mode "0755"
+    action :create
+  end
 end
 
 remote_file "#{rvmarchivesdir}/rvm-#{node[:rvm][:version]}.tar.gz" do
